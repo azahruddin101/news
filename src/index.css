@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import "tailwindcss";
+body {
+  font-family: 'Poppins', sans-serif;
+}
+:root {
+  --color-primary: #2563eb;
+  --color-sidebar-bg: #111827;
+  --color-sidebar-text: #fff;
+  --color-sidebar-link: #fff;
+  --color-sidebar-hover: #1e293b;
+  --color-form-bg: #fff;
+  --color-form-title: #2563eb;
+  --color-form-label: #374151;
+  --color-form-input: #f3f4f6;
+  --color-form-border: #d1d5db;
+  --color-form-error: #ef4444;
+}
+
+
+.sidebar-link {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.375rem;
+  color: var(--color-sidebar-link);
+  font-size: 0.875rem;
+  font-weight: 500;
+  background: none;
+  transition: background 0.2s, color 0.2s;
+}
+.sidebar-link:hover {
+  background: var(--color-sidebar-hover);
+  color: #fff;
+}
+
+
+.jodit-wysiwyg ol {
+  list-style-type: decimal !important;
+  padding-left: 40px !important;
+  margin-left: 0 !important;
+}
+
+.jodit-wysiwyg ol li {
+  list-style-type: decimal !important;
+  display: list-item !important;
+  margin-left: 0 !important;
+}
+
+.jodit-wysiwyg ul {
+  list-style-type: disc !important;
+  padding-left: 40px !important;
+  margin-left: 0 !important;
+}
+
+.jodit-wysiwyg ul li {
+  list-style-type: disc !important;
+  display: list-item !important;
+  margin-left: 0 !important;
+}
+
+.input {
+  @apply border border-gray-300 rounded-md px-4 py-2 w-full focus:outline-none focus:ring focus:border-blue-500;
+}
+
+.textarea {
+  @apply border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring focus:border-blue-500;
+}
+
+.file-input {
+  @apply border border-gray-300 rounded-md p-2 w-full text-sm;
+}

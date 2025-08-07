@@ -1,0 +1,33 @@
+stages:
+  - build
+  - deploy
+
+variables:
+  PROJECT_NAME: ai-news
+  BUILD_DIR: dist
+  DEPLOY_DIR: /opt/APPs/react_files/ai-news
+
+build-job:
+  stage: build
+  tags:
+    - linux
+  script:
+    - echo "Installing dependencies..."
+    - npm install --verbose
+    - echo "Building..."
+    - npm run build
+  artifacts:
+    paths:
+      - dist/
+
+deploy-job:
+  stage: deploy
+  tags:
+    - linux
+  script:
+    - echo "Deploying $PROJECT_NAME to $DEPLOY_DIR..."
+    - sudo rm -rf "$DEPLOY_DIR"
+    - sudo mkdir -p "$DEPLOY_DIR"
+    - sudo cp -r $BUILD_DIR/* "$DEPLOY_DIR"/
+  only:
+    - dev
